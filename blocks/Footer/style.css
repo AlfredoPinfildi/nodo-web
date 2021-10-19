@@ -1,0 +1,33 @@
+.footer {
+  padding: 3.2rem var(--horizontal-padding);
+
+  &__logo {
+    width: 6rem;
+    height: 6rem;
+    background-image: url("/assets/icons/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  %__contacts {
+    a + a {
+      margin-top: 0.8rem;
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &:first-child {
+      align-items: flex-start;
+      margin-bottom: 12rem;
+    }
+
+    &:last-child {
+      align-items: flex-end;
+    }
+  }
+}
