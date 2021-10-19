@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 const path = require("path");
 
 const babelConfigPath = path.join(__dirname, "babel.config.js");
@@ -11,20 +11,24 @@ module.exports = {
   output: {
     path: distPath,
     filename: "[name].js",
+    clean: true,
+    publicPath: "/",
   },
+  devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
+      filename: `index.html`,
       template: path.resolve(rootPath, "/index.html"),
-    }),
-    new CopyWebpackPlugin({
-      patterns: [{ from: path.resolve(rootPath, "assets") }],
     }),
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        use: "html-loader",
+        loader: "html-loader",
+        options: {
+          sources: false,
+        },
       },
       {
         test: /\.m?js$/,
@@ -38,8 +42,16 @@ module.exports = {
         },
       },
       {
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        exclude: "/node_modules/",
+        use: ["raw-loader"],
+      },
+      {
         test: /\.(svg|woff2?|png|jpe?g|gif)$/i,
-        use: "file-loader",
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+        },
       },
     ],
   },
@@ -51,7 +63,14 @@ module.exports = {
       "@components": path.resolve(rootPath, "components"),
       "@styles": path.resolve(rootPath, "styles"),
       "@utils": path.resolve(rootPath, "utils"),
+      "@pages": path.resolve(rootPath, "pages"),
+      "@router": path.resolve(rootPath, "router"),
+      "@data": path.resolve(rootPath, "data"),
+      "@models": path.resolve(rootPath, "models"),
     },
   },
   stats: "errors-warnings",
+  stats: {
+    children: false,
+  },
 };

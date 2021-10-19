@@ -1,6 +1,14 @@
 main {
   min-height: 100vh;
-  margin: 0 var(--horizontal-padding);
+  margin: 0;
+  opacity: 0;
+  transition: opacity var(--transition-duration--fast);
+  pointer-events: none;
+
+  .loaded & {
+    opacity: 1;
+    pointer-events: initial;
+  }
 }
 
 .columns {
@@ -20,4 +28,26 @@ main {
   left: 0;
   pointer-events: none;
   display: none;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1025px) {
+    box-sizing: border-box;
+    padding: 12rem var(--horizontal-padding);
+  }
+}
+
+.section-intro {
+  display: flex;
+
+  @media (min-width: 1025px) {
+    margin-bottom: 8rem;
+  }
+}
+
+section.intro {
+  justify-content: center;
 }

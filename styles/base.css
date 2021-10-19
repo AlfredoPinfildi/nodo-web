@@ -1,19 +1,17 @@
 html {
   font-size: 2.6666666667vw;
+
+  @media (min-width: 1025px) {
+    font-size: 0.6944444444vw;
+  }
 }
 
 body {
-  background-color: var(--light-green);
-  color: var(--dark-green);
+  background-color: black;
+  color: white;
 }
 
 * {
   margin: 0;
   padding: 0;
-}
-
-@media (min-width: 1025px) {
-  html {
-    font-size: 0.7874015748vw;
-  }
 }
