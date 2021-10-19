@@ -6,19 +6,68 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <meta name="Description" content="base" />
+    <meta name="Description" content="Nodo" />
     <meta name="theme-color" content="#000000" />
 
-    <title>Base</title>
+    <title>Nodo</title>
   </head>
 
-  <body>
-    <main>
-      <h1>Base<br />Boilerplate</h1>
-    </main>
-  </body>
+  <body data-scroll-container>
+    <div class="loader"></div>
 
-  <footer></footer>
+    <header class="header"></header>
+
+    <main>
+      <section class="hero" data-scroll-section></section>
+
+      <section class="intro" data-scroll-section>
+        <p class="p1 animated-text" data-intersection-ratio="0.2">
+          Nodo è un vocal reminder che ti aiuterà ricordare tutte le tue
+          attività importanti telefonandoti quando lo vorrai.
+        </p>
+      </section>
+
+      <section class="how" data-scroll-section>
+        <div class="section-intro d-col-12 d-f-row">
+          <p class="p4 d-col-2 animated-text" data-intersection-ratio="1">
+            intro
+          </p>
+
+          <h2
+            class="d-col-10 animated-text animated-text--unwrapped"
+            data-intersection-ratio="0.4"
+          >
+            Come funziona?
+          </h2>
+        </div>
+
+        <div class="how__steps"></div>
+      </section>
+
+      <section class="curious" data-scroll-section>
+        <div class="section-intro d-col-12 d-f-row">
+          <p class="p4 d-col-2 animated-text" data-intersection-ratio="1">
+            let's try
+          </p>
+
+          <h2
+            class="d-col-10 animated-text animated-text--unwrapped"
+            data-intersection-ratio="0.4"
+          >
+            Are you curious?
+          </h2>
+        </div>
+
+        <div class="curious__spy-me"></div>
+      </section>
+
+      <section class="download" data-scroll-section></section>
+    </main>
+
+    <footer class="footer" data-scroll-section></footer>
+
+    <canvas id="canvas"></canvas>
+  </body>
 
   <div class="columns"></div>
 </html>

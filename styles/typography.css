@@ -1,23 +1,103 @@
 :root {
-  --font-heading: "Zermatt First", serif;
-  --font-body: "Sharp Grotesk Light 20", sans-serif;
-  --font-body--second: "Sharp Grotesk Book 20", sans-serif;
+  --font-heading: "Adieu", sans-serif;
+  --font-body: "Aktiv", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 h1,
+h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 100;
+  font-weight: normal;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
 }
 
 h1 {
   font-size: 16rem;
+  text-align: center;
+
+  @media (min-width: 1025px) {
+    font-size: 18rem;
+  }
+}
+
+h2 {
+  font-size: 16rem;
+
+  @media (min-width: 1025px) {
+    font-size: 7.2rem;
+    line-height: 7.2rem;
+  }
 }
 
 h3 {
-  font-size: 4rem;
+  font-size: 16rem;
+
+  @media (min-width: 1025px) {
+    font-size: 3.6em;
+  }
 }
 
-p {
+p,
+.p1,
+.p2,
+.p3,
+.p4,
+.p5 {
   font-family: var(--font-body);
+}
+
+.p1 {
+  @media (min-width: 1025px) {
+    font-size: 4.8rem;
+  }
+}
+
+.p2 {
+  @media (min-width: 1025px) {
+    font-size: 3.6rem;
+  }
+}
+
+.p3 {
+  @media (min-width: 1025px) {
+    font-size: 2.4rem;
+  }
+}
+
+.p4 {
+  text-transform: uppercase;
+  color: var(--yellow);
+
+  @media (min-width: 1025px) {
+    font-size: 1.6rem;
+  }
+}
+
+.p5 {
+  @media (min-width: 1025px) {
+    font-size: 1.4rem;
+  }
+}
+
+.stroke {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
