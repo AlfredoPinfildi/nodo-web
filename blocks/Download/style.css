@@ -1,0 +1,20 @@
+.download {
+  background-color: var(--yellow);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  p {
+    margin-top: 1.7rem;
+  }
+
+  &__badge {
+    height: 11.4rem;
+    margin-top: 7.2rem;
+    background-image: url(https://user-images.githubusercontent.com/41680436/137110452-90ce4f40-8716-4512-85b1-b3f19ce9f7c3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
